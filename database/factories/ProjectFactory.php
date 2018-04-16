@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Project::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->sentence($nbWord=3),
         'status' => $faker->randomElement([
           'development','release', 'stable','obsolete'
         ]),        

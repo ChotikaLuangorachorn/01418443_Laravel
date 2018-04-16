@@ -8,5 +8,17 @@ class Issue extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    public function project(){
+    	return $this->belongsTo('App\Project', 'project_id');
+    }
 
+    public function category(){
+    	return $this->belongsTo('App\Category', 'category_id');
+    }
+    public function userAssignedTo(){
+    	return $this->belongsTo('App\User', 'assigned_to');
+    }
+    public function userReporter(){
+    	return $this->belongsTo('App\User', 'reporter');
+    }
 }

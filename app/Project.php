@@ -15,5 +15,8 @@ class Project extends Model
     public function categories(){
     	return $this->hasMany('App\Category', 'project_id');
     }
+    public function issues(){
+    	return $this->hasMany('App\Issue', 'project_id');
+    }    
 
 }
