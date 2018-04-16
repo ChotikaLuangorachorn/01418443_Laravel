@@ -14,8 +14,9 @@ Category Detail
 	    	<p class="card-text">
 	    		<div class="card border-info mb-3">
 			      	<div class="card-header bg-info">
-			      		<h5 class="float-left">Project ID: {{ $category->project_id }}</h5>
-			      		<h5 class="float-right">[{{ $category->project->status }}]</h5>
+			      		<h5 class="float-left">Project ID: {{ $category->project_id }}
+						<span class="badge badge-dark">{{ $category->project->status }}</span>
+			      		</h5>
 			      	</div>
 			    	<div class="card-body">
 				    	<p class="card-text">
@@ -27,17 +28,19 @@ Category Detail
 
 		   		<div class="card border-danger mb-3">
 			      	<div class="card-header bg-danger">
-			      		<h5 class="float-left">Assign to: {{ $category->assign_to }}</h5>
-			      		<h5 class="float-right">[{{ $category->user->access_level }}]</h5>
+			      		<h5 class="float-left">Assign to: {{ $category->assign_to }}
+						<span class="badge badge-dark">{{ $category->user->access_level }}</span>
+			      		</h5>
 			      	</div>
 			    	<div class="card-body">
 				    	<p class="card-text">
-				    		<p><b>Name:</b> <a href="{{url('/users/' . $category->assign_to)}}">{{ $category->user->name }}</a></p>
+				    		<p><b>Username:</b> <a href="{{url('/users/' . $category->assign_to)}}">{{ $category->user->username }}</a></p>
 				    		<p><b>Email:</b> {{ $category->user->email }}</p>
 				    	</p>
 			   		</div>
 		   		</div>
 	  		</p>
+	  		<p><b>Create Date:</b> {{$category->created_at->format('d/m/Y H:i:s')}}</p>
 	    </div>
 	  </div>
 	</div>

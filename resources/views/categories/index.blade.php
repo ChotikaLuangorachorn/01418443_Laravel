@@ -10,7 +10,7 @@ All Categories
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Project ID</th>
+        <th scope="col">Project ID (Name)</th>
         <th scope="col">Name</th>
         <th scope="col">Assign to</th>
       </tr>
@@ -21,8 +21,10 @@ All Categories
         <th scope="row">{{ $loop->iteration }}</th>
         <td>
           <a href="{{ url('/projects/'.$category->project_id) }}">
-            {{$category->project_id}}</td>
+            {{$category->project_id}}
           </a>
+          ({{$category->project->name}})
+        </td>
         <td>
           <a href="{{ url('/categories/'.$category->id) }}">
             {{ $category->name }}
@@ -30,7 +32,7 @@ All Categories
         </td>
         <td>
           <a href="{{ url('/users/'.$category->assign_to) }}">
-            {{ $category->assign_to }}
+            {{$category->user->username}}
           </a>
         </td>        
       </tr>

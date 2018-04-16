@@ -18,12 +18,14 @@ Issue Detail
 	    		<p><b>Reproducibility:</b> {{$issue->reproducibility}}</p>
 	    		<p><b>Description:</b> {{$issue->description}}</p>
 	    		<p><b>Steps:</b> {{$issue->steps}}</p>
+	    		<p><b>Create Date:</b> {{$issue->created_at->format('d/m/Y H:i:s')}}</p>
 	    		<hr>
 
 	    		<p><b>Project ID:</b> {{$issue->project_id}}, <b>Project Name:</b> <a href="{{url('/projects/'.$issue->project_id)}}">{{$issue->project->name}}</a></p>
 	    		<p><b>Category ID:</b> {{$issue->category_id}}, <b>Category Name:</b> <a href="{{url('/categories/'.$issue->category_id)}}">{{$issue->category->name}}</a></p>
-	    		<p><b>Reporter:</b> {{$issue->reporter}}, <b>Name:</b> <a href="{{url('/users/'.$issue->reporter)}}">{{$issue->userReporter->name}}</a></p>
-	    		<p><b>Assigned to:</b> {{$issue->assigned_to}}, <b>Name:</b> <a href="{{url('/users/'.$issue->assigned_to)}}">{{$issue->userAssignedTo->name}}</a></p>	     		
+
+	    		<p><b>Reporter:</b> {{$issue->reporter}}, <b>Username:</b> <a href="{{url('/users/'.$issue->reporter)}}">{{$issue->userReporter->username}}</a></p>
+	    		<p><b>Assigned to:</b> {{$issue->assigned_to}}, <b>Username:</b> <a href="{{url('/users/'.$issue->assigned_to)}}">{{$issue->userAssignedTo->username}}</a></p>	     		
 	  		</p>
 	    </div>
 	  </div>
