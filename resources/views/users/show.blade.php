@@ -8,7 +8,10 @@ User Detail
 <div class="col-sm-12">
   <div class="card border-primary mb-3" style="max-width: 100%;">
     <div class="card-header bg-primary">
-      <h3 class="float-left">{{ $user->username }} <span class="badge badge-dark">{{ $user->access_level }}</span></h3>
+      <h3>
+        <i class="material-icons" style="font-size: 36px">account_circle</i>
+        {{ $user->username }}
+        <span class="badge badge-dark">{{ $user->access_level }}</span></h3>
     </div>
     <div class="card-body">
       <p class="card-text">

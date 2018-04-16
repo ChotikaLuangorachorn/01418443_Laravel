@@ -5,6 +5,8 @@
 	<!-- <link rel="stylesheet" href="/css/app.css"> -->
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	@stack('css')
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	
 </head>
 <body>

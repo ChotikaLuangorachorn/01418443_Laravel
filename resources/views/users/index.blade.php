@@ -28,7 +28,7 @@ All Users
         <td>{{ $user->name }}</td>
         <td>{{ $user->access_level }}</td>
         <td>
-            {!! $user->is_enabled ? '<div>True</div>' : '<div style="color: red;">False</div>' !!}
+            {!! $user->is_enabled ? '<div><i class="material-icons">done</i></div>' : '<div style="color: red;"><i class="material-icons">clear</i></div>' !!}
         </td>
       </tr>
       @endforeach

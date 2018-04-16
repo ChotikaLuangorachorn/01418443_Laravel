@@ -8,7 +8,9 @@ Category Detail
 	<div class="col-sm-12">
 	  <div class="card border-primary mb-3" style="max-width: 100%;">
 	    <div class="card-header bg-primary">
-	    	<h3>{{ $category->name }}</h3>
+	    	<h3>
+				<i class="material-icons" style="font-size: 36px;">library_books</i>
+	    		{{ $category->name }}</h3>
 	    </div>
 	    <div class="card-body">
 	    	<p class="card-text">
