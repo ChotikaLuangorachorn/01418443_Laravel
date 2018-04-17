@@ -16,10 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('/users', 'UsersController@index');
-Route::get('/users/{id}', 'UsersController@show')->where('id','[0-9]+');
+Route::get('/users/{user}', 'UsersController@show')->where('user','[0-9]+');
+Route::get('/users/{user}/edit', 'UsersController@edit')->where('user','[0-9]+');
+Route::get('/users/{user}', 'UsersController@update')->where('user','[0-9]+');
 
 Route::get('/projects', 'ProjectsController@index');
-Route::get('/projects/{id}', 'ProjectsController@show')->where('id','[0-9]+');
+Route::get('/projects/{project}', 'ProjectsController@show')->where('project','[0-9]+');
+Route::get('/projects/create', 'ProjectsController@create');
+Route::post('/projects', 'ProjectsController@store');
+Route::get('/projects/{project}/edit', 'ProjectsController@edit')->where('project','[0-9]+');
+Route::put('/projects/{project}', 'ProjectsController@update')->where('project','[0-9]+');
 
 Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/{id}', 'CategoriesController@show')->where('id','[0-9]+');

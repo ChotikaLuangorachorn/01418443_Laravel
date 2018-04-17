@@ -22,6 +22,7 @@ class Category extends Model
         return $this->belongsTo('App\Issue', 'category_id');
     }
 
+
     public function scopeGlobal($query){
     	return $query->where('project_id', null);
     }

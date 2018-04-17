@@ -16,11 +16,18 @@ Project Detail
 	    </div>
 	    <div class="card-body">
 	      	<p class="card-text">
-	      	<p><b>View status:</b> {{ $project->view_status }}</p>
-	      	<p><b>Description:</b> {{ $project->description }}</p>
-	      	<p><b>Create Date:</b> {{ $project->created_at->format('d/m/Y H:i:s') }}</p>
+		      	<p><b>View status:</b> {{ $project->view_status }}</p>
+		      	<p><b>Description:</b> {{ $project->description }}</p>
+		      	<!-- <p><b>Create Date:</b> {{ $project->created_at}}</p> -->
+		      	<p><b>Create Date:</b> {{ $project->created_at->format('d/m/Y H:i:s') }}</p>
+		      	<p><b>Update Date:</b> {{ $project->updated_at->format('d/m/Y H:i:s') }}</p>
 	    	</p>
+
+	    	<div class="panel-footer" style="text-align: right;">
+	      		<a class="btn btn-outline-danger" href="{{url('/projects/'.$project->id.'/edit')}}">Edit</a>
+	   		</div>
 	    </div>
+
 	  </div>
 	</div>
 @endsection

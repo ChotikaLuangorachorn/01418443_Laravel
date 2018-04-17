@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Mantis DB</title>
 	<!-- <link rel="stylesheet" href="/css/app.css"> -->
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	@stack('css')
@@ -19,7 +19,7 @@
 
 	  	<div class="collapse navbar-collapse" id="navbarColor01">
 		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
+		      <li class="nav-item">
 		        <a class="nav-link" href="{{url('/users')}}">Users<span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
