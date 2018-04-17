@@ -26,12 +26,33 @@ Route::get('/projects/create', 'ProjectsController@create');
 Route::post('/projects', 'ProjectsController@store');
 Route::get('/projects/{project}/edit', 'ProjectsController@edit')->where('project','[0-9]+');
 Route::put('/projects/{project}', 'ProjectsController@update')->where('project','[0-9]+');
+Route::delete('/projects/{project}', 'ProjectsController@destroy');
 
 Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/{id}', 'CategoriesController@show')->where('id','[0-9]+');
 
 Route::get('/issues', 'IssuesController@index');
 Route::get('/issues/{id}', 'IssuesController@show')->where('id','[0-9]+');
+
+Route::get('/photos/upload', 'PhotosController@create');
+Route::post('/photos', 'PhotosController@store');
+Route::get('storage/{filename}', function ($filename)
+{
+    
+    $path = storage_path('app\public\\' . $filename);
+    if (!File::exists($path)) {
+        // abort(404);
+        return "file not exist " . $filename;
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+});
+
+
+
 // Route::get('/users/{name}', 'UsersController@showName')->where('name','[a-zA-Z][a-zA-Z0-9]+');
 
 // Route::get('/users/{id}', function($id){

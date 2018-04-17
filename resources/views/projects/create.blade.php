@@ -9,12 +9,26 @@ Add New Project
 			<div class="card-body">
 				<form action="/projects" method="post">
 					<!-- CSRF Cross-Site Request Forgery -->
-					{{ csrf_field() }}
+					<!-- {{ csrf_field() }} -->
+					@csrf  <!-- ver 5.6 -->
 					<!--  -->
-
+					@if ($errors->any())
+					    <div class="alert alert-warning">
+					        <ul>
+					            @foreach ($errors->all() as $error)
+					                <li>{{ $error }}</li>
+					            @endforeach
+					        </ul>
+					    </div>
+					@endif
 					<!-- {{ old('name') }} for non reset value-->
 					<label><b>Name:</b></label>
-					<input type="text" name="name" value="{{ old('name') }}">&emsp;
+					<input type="text" name="name" value="{{ old('name') }}">
+<!-- 					<div class="valid-feedback alert">
+        				{{ $errors->first('name') }}
+      				</div> -->
+					
+					&emsp;
 
 					<label><b>Status:</b></label>
 					<select name="status">

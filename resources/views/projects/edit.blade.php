@@ -43,10 +43,6 @@ Edit Project
 					<label><b>Description:</b></label><br>
 					<textarea name="description" rows="8" cols="80">{{ old('description') ?? $project->description }}</textarea><br>
 
-
-
-	
-
 					<button class="btn btn-outline-primary" type="submit">Submit</button>
 				</form>
 			</div>

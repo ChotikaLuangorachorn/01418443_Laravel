@@ -24,7 +24,12 @@ Project Detail
 	    	</p>
 
 	    	<div class="panel-footer" style="text-align: right;">
-	      		<a class="btn btn-outline-danger" href="{{url('/projects/'.$project->id.'/edit')}}">Edit</a>
+	      		<a class="btn btn-outline-danger" href="{{url('/projects/'.$project->id.'/edit')}}">Edit</a><br>
+	      		<form action="/projects/{{$project->id}}" method="post">
+	                @csrf
+	                @method('DELETE')
+	                <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
 	   		</div>
 	    </div>
 
