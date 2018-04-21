@@ -23,13 +23,13 @@ Project Detail
 		      	<p><b>Update Date:</b> {{ $project->updated_at->format('d/m/Y H:i:s') }}</p>
 	    	</p>
 
-	    	<div class="panel-footer" style="text-align: right;">
-	      		<a class="btn btn-outline-danger" href="{{url('/projects/'.$project->id.'/edit')}}">Edit</a><br>
+	    	<div class="panel-footer">
+	      		<a class="btn btn btn-outline-secondary float-left" href="{{url('/projects/'.$project->id.'/edit')}}">Edit</a>
 	      		<form action="/projects/{{$project->id}}" method="post">
 	                @csrf
 	                @method('DELETE')
-	                <button class="btn btn-danger" type="submit">Delete</button>
-              </form>
+	                <button class="btn btn-outline-danger float-right" type="submit">Delete</button>
+              	</form>
 	   		</div>
 	    </div>
 

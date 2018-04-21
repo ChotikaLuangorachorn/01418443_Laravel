@@ -1,7 +1,12 @@
 @extends('layouts.master')
 
 @section('page-title')
-All Categories
+  All Categories
+  <a class="btn" href="{{url('/categories/create')}}">
+    <i class="material-icons" style="font-size:36px;">
+      add_circle
+    </i>
+  </a>
 @endsection
 
 @section('content')

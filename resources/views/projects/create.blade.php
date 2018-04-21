@@ -4,10 +4,10 @@ Add New Project
 @endsection
 
 @section('content')
-	<div class="col-sm-12">
-		<div class="card border-primary mb-3" style="max-width: 100%;">
+	<div class="col-sm-6" style="margin:0 auto;">
+		<div class="card border-primary mb-3">
 			<div class="card-body">
-				<form action="/projects" method="post">
+				<form class="form-group" action="/projects" method="post">
 					<!-- CSRF Cross-Site Request Forgery -->
 					<!-- {{ csrf_field() }} -->
 					@csrf  <!-- ver 5.6 -->
@@ -23,15 +23,13 @@ Add New Project
 					@endif
 					<!-- {{ old('name') }} for non reset value-->
 					<label><b>Name:</b></label>
-					<input type="text" name="name" value="{{ old('name') }}">
+					<input class="form-control" type="text" name="name" value="{{ old('name') }}">
 <!-- 					<div class="valid-feedback alert">
         				{{ $errors->first('name') }}
       				</div> -->
-					
-					&emsp;
-
+					<br>
 					<label><b>Status:</b></label>
-					<select name="status">
+					<select class="form-control" name="status">
 						@foreach($status as $key => $value)
 							@if(old('status') == $key)
 								<option value="{{$key}}" selected="">{{ $value }}</option>
@@ -39,10 +37,10 @@ Add New Project
 								<option value="{{$key}}">{{ $value }}</option>
 							@endif
 						@endforeach
-					</select>&emsp;
+					</select><br>
 
 					<label><b>View Status:</b></label>
-					<select name="view_status">
+					<select class="form-control" name="view_status">
 						@foreach($view_status as $key => $value)
 							@if(old('view_status') == $key)
 								<option value="{{$key}}" selected="">{{ $value }}</option>
@@ -53,7 +51,7 @@ Add New Project
 					</select><br>					
 
 					<label><b>Description:</b></label><br>
-					<textarea name="description" rows="8" cols="80">{{ old('description') }}</textarea><br>
+					<textarea class="form-control" name="description" rows="8" cols="80">{{ old('description') }}</textarea><br>
 
 					<button class="btn btn-outline-primary" type="submit">Submit</button>
 				</form>

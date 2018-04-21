@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
                 ]);
             $table->enum('view_status',[
                 'public','private']);
-            $table->text('description')->nullable;
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

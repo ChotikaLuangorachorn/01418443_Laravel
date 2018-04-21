@@ -1,7 +1,13 @@
 @extends('layouts.master')
 
 @section('page-title')
-All Projects <a class="btn btn-outline-success" href="{{url('/projects/create')}}">create</a>
+  All Projects
+
+  <a class="btn" href="{{url('/projects/create')}}">
+    <i class="material-icons" style="font-size:36px;">
+      add_circle
+    </i>
+  </a>
 @endsection
 
 @section('content')

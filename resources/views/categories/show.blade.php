@@ -43,6 +43,16 @@ Category Detail
 		   		</div>
 	  		</p>
 	  		<p><b>Create Date:</b> {{$category->created_at->format('d/m/Y H:i:s')}}</p>
+	  		<p><b>Update Date:</b> {{ $category->updated_at->format('d/m/Y H:i:s') }}</p>
+
+	    	<div class="panel-footer">
+	      		<a class="btn btn btn-outline-secondary float-left" href="{{url('/categories/'.$category->id.'/edit')}}">Edit</a>
+	      		<form action="/categories/{{$category->id}}" method="post">
+	                @csrf
+	                @method('DELETE')
+	                <button class="btn btn-outline-danger float-right" type="submit">Delete</button>
+              	</form>
+	   		</div>	  		
 	    </div>
 	  </div>
 	</div>

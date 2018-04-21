@@ -23,10 +23,16 @@ User Detail
         </p>
 
         <div class="panel-footer" style="text-align: right;">
-              <a class="btn btn-outline-danger" href="{{url('/users/'.$user->id.'/edit')}}">Edit</a>
+              <a class="btn btn-outline-danger float-left" href="{{url('/users/'.$user->id.'/edit')}}">Edit</a>
+              <form action="/users/{{$user->id}}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-outline-danger float-right" type="submit">Delete</button>
+              </form>
         </div>
       </div>
     </div>
   </div>
 
 @endsection
+
