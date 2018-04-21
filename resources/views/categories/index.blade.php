@@ -25,11 +25,13 @@
       <tr>
         <th scope="row">{{ $loop->iteration }}</th>
         <td>
+          {{$category->project_id}}
           <a href="{{ url('/projects/'.$category->project_id) }}">
-            {{$category->project_id}}
+            {!! $category->project ? $category->project->name : '' !!}
+
           </a>
-          ({{$category->project->name}})
         </td>
+
         <td>
           <a href="{{ url('/categories/'.$category->id) }}">
             {{ $category->name }}
@@ -37,7 +39,7 @@
         </td>
         <td>
           <a href="{{ url('/users/'.$category->assign_to) }}">
-            {{$category->user->username}}
+            {!! $category->user ? $category->user->username : '' !!}
           </a>
         </td>        
       </tr>

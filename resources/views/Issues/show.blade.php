@@ -26,11 +26,17 @@
 
 	    		<hr>
 
-	    		<p><b>Project ID:</b> {{$issue->project_id}}, <b>Project Name:</b> <a href="{{url('/projects/'.$issue->project_id)}}">{{$issue->project->name}}</a></p>
-	    		<p><b>Category ID:</b> {{$issue->category_id}}, <b>Category Name:</b> <a href="{{url('/categories/'.$issue->category_id)}}">{{$issue->category->name}}</a></p>
+	    		<p><b>Project ID:</b> {{$issue->project_id}}, 
+	    			<b>Project Name:</b> <a href="{{url('/projects/'.$issue->project_id)}}">{!!$issue->project ? $issue->project->name : '' !!}</a></p>
 
-	    		<p><b>Reporter:</b> {{$issue->reporter}}, <b>Username:</b> <a href="{{url('/users/'.$issue->reporter)}}">{{$issue->userReporter->username}}</a></p>
-	    		<p><b>Assigned to:</b> {{$issue->assigned_to}}, <b>Username:</b> <a href="{{url('/users/'.$issue->assigned_to)}}">{{$issue->userAssignedTo->username}}</a></p>	     		
+	    		<p><b>Category ID:</b> {{$issue->category_id}}, 
+	    			<b>Category Name:</b> <a href="{{url('/categories/'.$issue->category_id)}}">{!! $issue->category ? $issue->category->name : '' !!}</a></p>
+
+	    		<p><b>Reporter:</b> {{$issue->reporter}}, 
+	    			<b>Username:</b> <a href="{{url('/users/'.$issue->reporter)}}">{!! $issue->userReporter ? $issue->userReporter->username : '' !!}</a></p>
+
+	    		<p><b>Assigned to:</b> {{$issue->assigned_to}}
+	    			, <b>Username:</b> <a href="{{url('/users/'.$issue->assigned_to)}}">{!!$issue->userAssignedTo ? $issue->userAssignedTo->username : '' !!}</a></p>	     		
 	  		</p>
 
 	    	<div class="panel-footer">

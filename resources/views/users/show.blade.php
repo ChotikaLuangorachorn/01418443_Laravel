@@ -27,7 +27,7 @@ User Detail
               <form action="/users/{{$user->id}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-outline-danger float-right" type="submit">Delete</button>
+                  <button class="btn btn-outline-danger float-right" id='delete'>Delete</button>
               </form>
         </div>
       </div>
@@ -35,4 +35,3 @@ User Detail
   </div>
 
 @endsection
-
