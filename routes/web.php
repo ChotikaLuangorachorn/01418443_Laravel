@@ -10,18 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/users', 'UsersController@index');
-Route::get('/users/{user}', 'UsersController@show')->where('user','[0-9]+');
-Route::get('/users/create', 'UsersController@create');
-Route::post('/users', 'UsersController@store');
-Route::get('/users/{user}/edit', 'UsersController@edit')->where('user','[0-9]+');
-Route::put('/users/{user}', 'UsersController@update')->where('user','[0-9]+');
-Route::delete('/users/{user}', 'UsersController@destroy');
+Route::get('/','DashboardController@index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::resource('/users','UsersController');
+// Route::get('/users', 'UsersController@index');
+// Route::get('/users/{user}', 'UsersController@show')->where('user','[0-9]+');
+// Route::get('/users/create', 'UsersController@create');
+// Route::post('/users', 'UsersController@store');
+// Route::get('/users/{user}/edit', 'UsersController@edit')->where('user','[0-9]+');
+// Route::put('/users/{user}', 'UsersController@update')->where('user','[0-9]+');
+// Route::delete('/users/{user}', 'UsersController@destroy');
 
 Route::get('/projects', 'ProjectsController@index');
 Route::get('/projects/{project}', 'ProjectsController@show')->where('project','[0-9]+');
@@ -83,3 +83,6 @@ Route::get('storage/{filename}', function ($filename)
 // 	$cate = \App\Category::findOrFail($id);
 // 	return $cate;
 // })->where('id','[0-9]+');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

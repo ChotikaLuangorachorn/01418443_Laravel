@@ -19,6 +19,7 @@
 
 	  	<div class="collapse navbar-collapse" id="navbarColor01">
 		    <ul class="navbar-nav mr-auto">
+		    
 		      <li class="nav-item">
 		        <a class="nav-link" href="{{url('/users')}}">Users<span class="sr-only">(current)</span></a>
 		      </li>
@@ -31,6 +32,7 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="{{url('/issues')}}">Issues</a>
 		      </li>
+
 		    </ul>
 	  	</div>
 	</nav>

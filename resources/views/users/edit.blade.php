@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('page-title')
-Edit Project
+Edit User
 @endsection
 
 @section('content')

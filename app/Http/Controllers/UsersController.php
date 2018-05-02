@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth',[
+            'except' => ['index','show']
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +31,12 @@ class UsersController extends Controller
      */
     public function create()
     {
+        if(\Auth::user()->cant('create', User::class)){
+            return "You can't create user";
+        }
+        // if (\Gate::denies('create-user')){
+        //     return 'denies';
+        // }
         $access_level = [
             'viewer' => 'Viewer',
             'reporter' => 'Reporter',
@@ -95,6 +107,13 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        // if (\Gate::denies('update-user', $user)) {
+        //     return 'denies';
+        // }
+        if(\Auth::user()->cant('update', $user)){
+            return "can't edit";
+        }
+
         $access_level = ['viewer' => 'Viewer',
         'reporter' => 'Reporter',
         'developer' => 'Developer',

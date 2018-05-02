@@ -38,4 +38,18 @@ class User extends Authenticatable
     public function issues(){
         return $this->hasMany('App\Issues', 'assigned_to')->hasMany('App\Issues', 'reporter');
     }
+    public function isSuperAdmin(){
+        return $this->access_level==='administrator';
+    }
+    // public function getStatusIconClassAttribute(){
+    //     switch ($this->is_enabled) {
+    //         case '1':
+    //             # code...
+    //             break;
+            
+    //         default:
+    //             # code...
+    //             break;
+    //     }
+    // }
 }

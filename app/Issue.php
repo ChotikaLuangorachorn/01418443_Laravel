@@ -21,4 +21,9 @@ class Issue extends Model
     public function userReporter(){
     	return $this->belongsTo('App\User', 'reporter');
     }
+    // get..Attribute
+    public function getIssueNumberAttribute(){
+        return str_pad($this->id, 2, '0', STR_PAD_LEFT);
+    }
+    
 }

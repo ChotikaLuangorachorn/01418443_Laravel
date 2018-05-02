@@ -24,7 +24,7 @@
     <tbody>
       @foreach($issues as $issue)
       <tr>
-        <th scope="row">{{ $loop->iteration }}</th>
+        <th scope="row">{{ $issue->issue_number }}</th>
         <td>
           <a href="{{url('/issues/'.$issue->id)}}">
             {{$issue->summary}}

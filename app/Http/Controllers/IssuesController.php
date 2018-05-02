@@ -66,7 +66,6 @@ class IssuesController extends Controller
                 'steps' => 'required',
                 'project_id' => 'required',
                 'category_id' => 'required',
-                'reporter' => 'required',
                 'assigned_to' => 'required'
             ]);
             $issue = new Issue;
@@ -79,7 +78,7 @@ class IssuesController extends Controller
             $issue->steps = $request->input('steps');
             $issue->project_id = $request->input('project_id');
             $issue->category_id = $request->input('category_id');
-            $issue->reporter = $request->input('reporter');
+            $issue->reporter = $request->user()->id;
             $issue->assigned_to = $request->input('assigned_to');
             // return $project;
 
@@ -167,7 +166,6 @@ class IssuesController extends Controller
             $issue->steps = $request->input('steps');
             $issue->project_id = $request->input('project_id');
             $issue->category_id = $request->input('category_id');
-            $issue->reporter = $request->input('reporter');
             $issue->assigned_to = $request->input('assigned_to');
 
             // return $project;

@@ -94,16 +94,7 @@ Add New Issue
 							@endif
 						@endforeach
 					</select><br>
-					<label><b>Reporter:</b></label>
-					<select class="form-control" name="reporter">
-						@foreach($users as $value)
-							@if(old('reporter') == $value->id)
-								<option value="{{$value->id}}" selected="">{{ $value->id.' '.$value->username }}</option>
-							@else
-								<option value="{{$value->id}}">{{ $value->id.' '.$value->username }}</option>
-							@endif
-						@endforeach
-					</select><br>
+
 					<label><b>Assign to:</b></label>
 					<select class="form-control" name="assigned_to">
 						@foreach($users as $value)
